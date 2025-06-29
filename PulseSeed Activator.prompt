@@ -1,0 +1,61 @@
+# 🌱 PulseSeed Activator Prompt
+
+**Intent:**  
+This orchestrator ritual builds a single-user, local-first contextual daemon called **PulseSeed** from this prompt folder.
+
+---
+
+## ✅ **Build Requirements**
+
+1. **Scan this repo**
+   - All `.prompt` files in `/api/` and `/ui/` are seeds.
+   - Each prompt should be parsed and expanded into real, working Python files.
+   - Preserve the file structure exactly.
+
+2. **Respect the Manifest**
+   - If `manifest.json` is present, follow the build order:
+     - API first → UI second → then config and stubs.
+   - If any files are missing, flag them clearly.
+
+3. **No hallucination**
+   - Do not add modules that are not described in the `.prompt` files.
+   - Do not remove modules described here.
+
+4. **Keep it local**
+   - All routes, toggles, and config must assume a local-only FastAPI server.
+   - `.env` keys should never be hardcoded into output code.
+   - `.env.example` must be preserved.
+
+5. **Preserve toggles**
+   - Ensure toggles for screen capture, STT, TTS, and the UI bubble are in place.
+   - Include the status indicator logic as specified.
+
+6. **Maintain style**
+   - UI styling must follow the descriptions: glass bubble, bark/stone textures, drop waveform.
+   - Use PyQt5 (or PyQt6 if needed) for the UI layer.
+
+7. **No third-party cloud orchestration**
+   - Only direct API calls (Groq, ElevenLabs, Whisper if remote).
+   - Local inference or STT must respect the config abstraction.
+
+---
+
+## ⚙️ **Deliverable**
+
+When complete, the generated files should be:
+- Ready to run with `uvicorn api.main:app --reload`
+- Ready to launch `python ui/app.py`
+- Compatible with the `.env` config
+- Self-contained for personal local use only
+
+---
+
+## 🗝️ **Philosophy**
+
+*This is a seed, not a product.  
+Grow it wisely.  
+The harvest is yours.*
+
+---
+
+**End Activator Prompt**
